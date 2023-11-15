@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARRA DE MENÚ</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        html{
+            font-size: 16px;
+        }
+        nav{
+            background-color: aqua;
+        }
+        h1{
+            margin: 10px auto;
+            text-align: center;
+        }
+        ul{
+            text-align: center;
+        }
+        li{
+            display: inline-block;
+            padding: 0;
+            margin: 5px 20px;
+        }
+        nav a{
+            /*border: 1px solid red;*/
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 10px;
+            display: inline-block;
+            background-color: darkblue;
+            color: white;
+            border-radius: 10px;
+
+            box-shadow: 5px 5px 10px grey inset;
+        }
+        nav a:hover{
+            background-color: darkgreen;
+        }
+        nav .nivel2{
+            display: none;
+        }
+        nav>ul>li:hover nav>ul .nivel1>li>ul{
+            display: block;
+        }
+    </style>
+    <header>
+        <h1>
+            BARRA DE MENÚ CON UN NIVEL
+        </h1>
+</head>
+<body>
+    </header>
+    <nav>
+        <ul class="nivel1">
+            <li>OPCIÓN 100
+                <ul class="nivel2">
+                    <li><a href="#">OPCIÓN 110</a></li>
+                    <li><a href="#">OPCIÓN 120</a></li>
+                    <li><a href="#">OPCIÓN 130</a></li>
+                    <li><a href="#">OPCIÓN 140</a></li>
+                </ul>
+            </li>
+            <li>OPCIÓN 200
+                <ul class="nivel2">
+                    <li><a href="#">OPCIÓN 210</a></li>
+                    <li><a href="#">OPCIÓN 230</a></li>
+                    <li><a href="#">OPCIÓN 240</a></li>
+                    <li><a href="#">OPCIÓN 250</a></li>
+                </ul>
+            </li>
+            <li>OPCIÓN 100
+                <ul class="nivel2">
+                    <li><a href="#">OPCIÓN 310</a></li>
+                    <li><a href="#">OPCIÓN 320</a></li>
+                    <li><a href="#">OPCIÓN 330</a></li>
+                    <li><a href="#">OPCIÓN 340</a></li>
+                </ul>
+            </li>
+            <li>OPCIÓN 100
+                <ul class="nivel2">
+                    <li><a href="#">OPCIÓN 410</a></li>
+                    <li><a href="#">OPCIÓN 420</a></li>
+                    <li><a href="#">OPCIÓN 430</a></li>
+                    <li><a href="#">OPCIÓN 440</a></li>
+                </ul>
+            </li>
+            <li>OPCIÓN 100
+                <ul class="nivel2">
+                    <li><a href="#">OPCIÓN 510</a></li>
+                    <li><a href="#">OPCIÓN 520</a></li>
+                    <li><a href="#">OPCIÓN 530</a></li>
+                    <li><a href="#">OPCIÓN 540</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

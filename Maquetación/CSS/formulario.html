@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Contact Form</title>
+    <style>
+        :-moz-placeholder {
+            color: blue; /*Coloca de color azul los placeholder en navegador de firefox*/
+        }
+        ::-webkit-input-placeholder {
+            color: blue; /*Establece de color azul los placeholder en Webkit*/
+        }
+        *:focus {
+            outline: none; /*Elimina los estilos de Webkit*/
+        }
+        body { /*Dentro del body de la página...*/
+            font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif; /*Establece tamaño de fuente e interlineado de 14px y 21px con un estilo sans-serif*/
+        }
+        .contact_form h2, .contact_form label { /*En el título h2 y los label dentro de contact_form...*/
+            font-family: Georgia, Times, "Times New Roman", serif; /*Establece un estilo de fuente Georgia, Times o Times New Roman*/
+        }
+        .form_hint, .required_notification { /*Dentro de los span form_hint y required_notification...*/
+            font-size: 11px; /*Establece un tamaño de fuente de 11px*/
+        }
+        .contact_form ul {  /*Selecciona los ul dentro de contact_form*/
+            width: 750px; /*Establece el ancho de la lista en 750px*/
+            list-style-type: none; /*Elimina los marcadores de lista*/
+            list-style-position: outside; /*Posisiona los marcadores de la lista fuera de los elementos de esta*/
+            margin: 0px; /*Establece un margen de 0px*/
+            padding: 0px; /*Establece el relleno en 0px*/
+        }
+        .contact_form li { /*Selecciona todas las listas dentro de contact_form*/
+            padding: 12px; /*Establece el relleno en 12px*/
+            border-bottom: 1px solid #eee; /*Coloca un borde inferior de 1px de color blanco*/
+            position: relative; /*Posiciona el elemento como relativo*/
+        }
+        .contact_form li:first-child, .contact_form li:last-child { /*En la primer y última lista en contact_form...*/
+            border-bottom: 1px solid #777; /*Coloca un borde inferior de 1px de color gris*/
+        }
+        .contact_form h2 { /*Para el título dentro de contact_form*/
+            margin: 0; /*Establece un margen de 0*/
+            display: inline; /*Establece el acomodo del elemento como lineal*/
+        }
+        .required_notification { /*Para el requiered_notification*/
+            color: #d45252; /*Establece el color en rojo*/
+            margin: 5px 0 0 0; /*Establece un margen superior de 5px*/
+            display: inline; /*Se acomoda de forma lineal*/
+            float: right; /*Se establece a la derecha*/
+        }
+        .contact_form label { /*En los label dento de contact_form*/
+            width: 150px; /*Establece un ancho de 150px*/
+            margin-top: 3px; /*Establece un margen superior de 3px*/
+            display: inline-block; /*Se posiciona como bloque en línea*/
+            float: left; /*Se coloca a la izquierda*/
+            padding: 3px; /*Se coloca un espacio de 3px*/
+        }
+        .contact_form input { /*En los input dentro de contact_form...*/
+            height: 20px; /*Establece una altura de 20px*/
+            width: 220px; /*Establece un ancho de 220px*/
+            padding: 5px 8px; /*Establece espacio superior de 5px e inferior de 8px*/
+        }
+        .contact_form textarea { /*En el textarea dentro de contact_form...*/
+            padding: 8px; /*Establece un espacio de 8px*/
+            width: 300px; /*Establece un ancho de 300px*/
+        }
+        .contact_form button { /*En el boton dentro del contact_form*/
+            margin-left: 156px; /*Establece un margen izquierdo en 156px*/
+        }
+        .contact_form input, .contact_form textarea { /*En los input y textarea dentro de contact_form*/
+            border: 1px solid #aaa; /*Establece un borde de 1px color gris claro*/
+            box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset; /*Establece una sombra exterior e interior*/
+            border-radius: 2px; /*Crea bordes redondeados en 2px*/
+        }
+        .contact_form input:focus, .contact_form textarea:focus { /*Para los tetarea e input dentro de contact_form que estén en "foto"*/
+            background: #fff; /*Establece un fondo blanco*/
+            border: 1px solid #555; /*Establece un borde de 1px color gris*/
+            box-shadow: 0 0 3px #aaa; /*Establece una sombra color gris claro*/
+        }
+        button.submit { /*Para el boton "submit"*/
+            background-color: #68b12f; /*Establece un fondo de color verde*/
+            /*Establece un fondo on efecto de degradado*/
+            background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+            background: -webkit-linear-gradient(top, #68b12f, #50911e);
+            background: -moz-linear-gradient(top, #68b12f, #50911e);
+            background: -ms-linear-gradient(top, #68b12f, #50911e);
+            background: -o-linear-gradient(top, #68b12f, #50911e);
+            background: linear-gradient(top, #68b12f, #50911e);
+            border: 1px solid #509111;
+            /*Establese los bordes*/
+            border-bottom: 1px solid #5b992b;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            /*Establece el radio y color de los bordes*/
+            box-shadow: inset 0 1px 0 0 #9fd574;
+            -webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
+            -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+            -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+            -o-box-shadow: 0 1px 0 0 #9fd574 inset;
+            color: white; /*Establece un color*/
+            font-weight: bold; /*Establece el ancho*/
+            padding: 6px 20px; /*Establece espacios superiores e inferiores*/
+            text-align: center; /*Establece el texto del botón en el centro*/
+            text-shadow: 0 -1px 0 #396715; /*Establece una sombra al texto del botón*/
+        }
+        button.submit:hover { /*Al boton "submit" mientras se le apunte con el cursor*/
+            opacity:.85; /*Establece una opasidad al .85*/
+            cursor: pointer; /*Cambia el cursor a un puntero*/
+        }
+        button.submit:active { /*Al botón "submit" mientras está activo (pulsando)*/
+            border: 1px solid #20911e; /*Establece un borde verde de 1px*/
+            /*Establece una sombra*/
+            box-shadow: 0 0 10px 5px #356b0b inset;
+            -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+            -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+            -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+            -o-box-shadow: 0 0 10px 5px #356b0b inset;
+        }
+        .contact_form input:focus, .contact_form textarea:focus { /*Al input y textarea dentro del contact_form mientras esté en foco*/
+            padding-right:70px; /*Establece un espacio a la derecha de 70px*/
+        }
+        .contact_form input, .contact_form textarea { /*Al input y textarea dentro del contact_form*/
+            /*Establece una transición a los espacios agregados*/
+            -moz-transition: padding .25s;
+            -webkit-transition: padding .25s;
+            -o-transition: padding .25s;
+            transition: padding .25s;
+        }
+        .contact_form input, .contact_form textarea { /*Al input y textarea dentro del contact_form*/
+            padding-right:30px; /*Establece un espacio a la derecha de 30px*/
+        }
+        input:required, textarea:required { /*Al input y textarea*/
+            background: #fff url(images/red_asterisk.png) no-repeat 98% center; /*Agrega una marca cuando el campo es requerido*/
+        }
+        ::-webkit-validation-bubble-message { /*Para el mensaje de validación de webkit*/
+            padding: 1em; /*Establece un espacio de 1em*/
+        }
+        .contact_form input:focus:invalid, .contact_form textarea:focus:invalid { /*En los input y textarea dentro de contact_form que están en foco y marcados como inválido*/
+            background: #fff url(images/invalid.png) no-repeat 98% center; /*Establece un fondo blanco y una imagen llamada "invalid" centrada*/
+            box-shadow: 0 0 5px #d45252; /*Establece una sombra roja*/
+            border-color: #b03535 /*Establece un color del borde rojo*/
+        }
+        .contact_form input:required:valid, .contact_form textarea:required:valid { /*En los input y textarea dentro de contact_form que son requeridos y marcados como válidos*/
+            background: #fff url(images/valid.png) no-repeat 98% center; /*Establece un fondo blanco y una imagen llamada "valid" centrada*/
+            box-shadow: 0 0 5px #5cd053; /*Establece una sombra verde*/
+            border-color: #28921f; /*Establece un color del borde verde*/
+        }
+        .form_hint { /*En el form_hint...*/
+            background: #d45252; /*Establece un fondo rojo*/
+            border-radius: 3px 3px 3px 3px; /*Redondea los bordes*/
+            color: white; /*Establece un color del texto blanco*/
+            margin-left:8px; /*Establece un margen izquierdo de 8px*/
+            padding: 1px 6px; /*Establece un relleno superior de 1px e inferior de 6px*/
+            z-index: 999; /*Establce el índice z por ensima de todo lo demás*/
+            position: absolute; /*Establece la posición como absoluta*/
+            display: none; /*Elimina la pista de la caja*/
+        }
+        .form_hint::before { /*Para "anteior" dentro de form_hint*/
+            content: "\25C0"; /*Inserta un triángulo apuntando hacia la derecha*/
+            color:#d45252; /*Establece un color rojo ligeramente opaco*/
+            position: absolute; /*Establece una posición absoluta*/
+            top:1px; /*Establese una separación de 1px desde arriba*/
+            left:-6px; /*Establece una separación de 6px desde la derecha*/
+        }
+        .contact_form input:focus + .form_hint { /*Cuando el input dentro de contact_form está en foco, se muestra el form_hint*/
+            display: inline; /*Se muestra en línea*/
+        }
+        .contact_form input:required:valid + .form_hint { /*Cuando el input dentro de contact_form es requerido y marcado como válido se muestra el form_hint*/
+            background: #28921f; /*Establece un colo de fondo vede*/
+        }
+        .contact_form input:required:valid + .form_hint::before { /*Cuando el input dentro de contact_form es requerido y marcado como válido se muestra el tríangulo a la derecha del form_hint*/
+            color:#28921f; /*Se establece un color verde*/
+        }
+    </style>
+</head>
+<body>
+    <form class="contact_form" action="" method="post" name="contact">
+        <ul>
+            <li>
+                 <h2>Contact Us</h2>
+                 <span class="required_notification">* Denotes Required Field</span>
+            </li>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="John Doe" required/>
+            </li>
+            <li>
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="john_doe@example.com" required/>
+                <span class="form_hint">Proper format "name@something.com"</span>
+            </li>
+            <li>
+                <label for="website">Website:</label>
+                <input type="url" name="website" placeholder="http://johndoe.com/" required pattern="https"/>
+                <span class="form_hint">Proper format "https://someaddress.com"</span>
+            </li>
+            <li>
+                <label for="message">Message:</label>
+                <textarea name="message" cols="40" rows="6" required></textarea>
+            </li>
+            <li>
+                <button class="submit" type="submit">Submit Form</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/*Incio del filtro*/
+
+/*.Elec input:checked{
+    background-color: cyan;
+}*/
+
+* {
+    font-family: RobotoMono-Regular;
+    color: white;
+}
+
+
+.cuerpo {
+    display: grid;
+    background: var(--morado-4);
+    border-radius: var(--border-8);
+    grid-template-areas:
+        "Clasificación  Ubicación_1  Ubicación_2  Ubicación_3  Ubicación_4  Ubicación_5  Ubicación_6  Ubicación_7";
+    min-height: 160px;
+    margin-top: 19px;
+    /* display: none; */
+}
+
+/*.cuerpo_u{
+    display: grid;
+    background: #313450;
+    border-radius: var(--border-8);
+    grid-template-areas: 
+    "Clasificación  Ubicación_1  Ubicación_2  Ubicación_3  Ubicación_4";
+}*/
+
+.Clasificación {
+    grid-area: Clasificación;
+    padding-left: 40px;
+
+}
+
+.Ubicación_1 {
+    grid-area: Ubicación_1;
+    padding-left: 20px;
+}
+
+.Ubicación_2 {
+    grid-area: Ubicación_2;
+    position: relative;
+    padding-top: 5px;
+}
+
+.Ubicación_3 {
+    grid-area: Ubicación_3;
+    position: relative;
+    padding-top: 5px;
+}
+
+.Ubicación_4 {
+    grid-area: Ubicación_4;
+    position: relative;
+    padding-top: 5px;
+}
+
+.Ubicación_5 {
+    grid-area: Ubicación_5;
+    position: relative;
+    padding-top: 5px;
+}
+
+.Ubicación_6 {
+    grid-area: Ubicación_6;
+    position: relative;
+    padding-top: 5px;
+}
+
+.Ubicación_7 {
+    grid-area: Ubicación_7;
+    position: relative;
+    padding-top: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: var(--morado-2);
+    cursor: pointer;
+}
+
+/*input[type="checkbox"]::after{
+    background-color: var(--morado-2);
+}*/
+
+input[type="checkbox"]:hover {
+    background-color: var(--morado-3);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--morado-3);
+}
+
+/*Final del filtro*/
+
+/*Es parte de los comentarios*/
+
+.comentario__caja::placeholder{
+    color: var(--morado-bg);
+    font-family: RobotoMono-Regular;
+    font-size: 20px;
+}
+
+.comentario__usuario {
+    font-family: RobotoMono-Bold;
+    src: url(../assets/fonts/RobotoMono-Bold.ttf);
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.comentario__text {
+    font-family: RobotoMono-Light;
+    src: url(../assets/fonts/RobotoMono-Light.ttf);
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+
+.comentar{
+    display: flex;
+    align-self: center;
+    width: 100%;
+}
+
+.user_1{
+    display: flex;
+    align-self: center;
+    width: 80%;
+    padding-top: 45px;
+}
+
+.SeccionComentarios {
+    margin-top: 130px;
+    width: 100%;
+}
+
+.comentario__caja {
+    resize: none;
+    padding: 20px;
+    height: 80px;
+    height: 111px;
+    width: 89.5%;
+    border-radius: var(--border-8);
+    background: var(--morado-4);
+    color: var(--blanco-);
+    margin-left: 20px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animación</title>
+</head>
+  <style>
+    .elemento {
+        animation-name: cambiar-elemento;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+    }
+    @keyframes move {
+      0%{
+        transform: translate(0, 0);
+      }
+      25%{
+        transform: translate(calc(100vw - 100%), calc(100vh - 100%));
+      }
+      50%{
+        transform: translate(calc(100vw - 100%), 0);
+      }
+      75%{
+        transform: translate(0, calc(100vh - 100%));
+      }
+    }
+    img.animated{
+      animation: move 5s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <img src="GCB.png" alt="Imagen animada" class="animated">
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transición</title>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        div{
+            width: 220px;
+            height: 200px;
+            background-color: red;
+            color: black;
+            font-size: 2rem;
+            display: flex;
+            transition: all .5s;
+        }
+        div:hover{
+            background-color: black;
+            color: red;
+        }
+        img{
+            position: relative;
+            left: -300px;
+            transition: .5s;
+        }
+        img:hover{
+            /*transform: rotate(360deg);*/
+            transform: translateX(100px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        TEXTO SUPER INTERESANTE
+    </div>
+    <img id="img1" src="Imágenes/Mule_Rick.png">
+</body>
+</html>

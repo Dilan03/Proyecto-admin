@@ -1,0 +1,46 @@
+#encabezado {
+    background-color: blue;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 15px;
+    text-align: center;
+    color: pink;
+    font-size: 48px;
+}
+#encabezado img {
+    height: 48px;
+}
+#areaTexto {
+    margin: 0 auto;
+    width: 50%;
+    background-color: yellow;
+    min-width: 800px;
+}
+#areaTexto img{
+    height: 60px;
+    float: left;
+}
+
+#areaTexto img:hover{
+    transform: rotate(360deg);
+}
+#navegacion {
+    float: left;
+    background-color: darkgreen;
+    min-width: 200px;
+}
+
+#navegacion2 {
+    float: right;
+    background-color: darkgreen;
+    min-width: 200px;
+}
+#pie{
+    background-color: aqua;
+    position: absolute;
+    bottom: 0px;
+    min-width: 100%;
+}
+body{
+    background-color: lightgrey;
+}

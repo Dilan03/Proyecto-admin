@@ -1,0 +1,66 @@
+DELIMITER $$
+
+CREATE TRIGGER `actualizar_publicacion` BEFORE UPDATE ON `detallesposts`
+ FOR EACH ROW BEGIN
+	DECLARE id_autor_det VARCHAR(18);
+
+    SELECT id_autor INTO id_autor_det FROM posts WHERE id_detallesPosts = id;
+    
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), id_autor_det, 'Actualizacion de publicacion', OLD.id, NOW());
+END
+DELIMITER ;
+
+CREATE TRIGGER `actualizar_usuario` BEFORE UPDATE ON `usuarios`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), OLD.curp, 'Actualizacion de Usuario', NULL, NOW());
+END
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `alta_usuario` BEFORE INSERT ON `usuarios`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), NEW.curp, 'Registro de Usuario', NULL, NOW());
+END
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE TRIGGER `añadir_comentario` BEFORE INSERT ON `comentarios`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), NEW.id_autor, 'Creacion de comentario', NEW.id_post, NOW());
+END
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `baja_usuario` BEFORE DELETE ON `usuarios`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), OLD.curp, 'Baja de Usuario', NULL, NOW());
+END
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `borrar_comentario` BEFORE DELETE ON `comentarios`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), OLD.id_autor, 'Eliminacion de comentario', OLD.id_post, NOW());
+END
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `borrar_publicacion` BEFORE DELETE ON `posts`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), OLD.id_autor, 'Eliminacion de publicacion', OLD.id, NOW());
+END
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `crear_publicacion` BEFORE INSERT ON `posts`
+ FOR EACH ROW BEGIN
+    INSERT INTO bitacora (equipo, usuario, operacion, publicacion, fecha)
+    VALUES (user(), NEW.id_autor, 'Creacion de publicacion', NEW.id, NOW());
+END
+DELIMITER ;

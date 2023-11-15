@@ -1,0 +1,67 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `BorrarComentario`(IN `comentario_id_param` INT)
+BEGIN
+    DELETE FROM comentarios
+    WHERE id = comentario_id_param;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `EliminarUsuario`(IN `usuario_id_param` VARCHAR(18))
+BEGIN
+    DELETE FROM usuarios
+    WHERE curp = usuario_id_param;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarComentario`(IN `id_autor_param` VARCHAR(18), IN `contenido_param` TEXT, IN `fecha_publicacion_param` DATETIME, IN `id_post_param` INT)
+BEGIN
+    INSERT INTO comentarios (id_autor, contenido, fecha_publicacion, id_post)
+    VALUES (id_autor_param, contenido_param, fecha_publicacion_param, id_post_param);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarEtiqueta`(IN `nombre_param` VARCHAR(100), IN `id_post_param` INT)
+BEGIN
+    INSERT INTO etiquetas (nombre, id_post)
+    VALUES (nombre_param, id_post_param);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarUsuario`(IN `curp_param` VARCHAR(18), IN `nombre_param` VARCHAR(50), IN `apellido_param` VARCHAR(50), IN `correo_param` VARCHAR(50), IN `contraseña_param` VARCHAR(50), IN `foto_param` MEDIUMBLOB, IN `telefono_param` VARCHAR(15), IN `id_rol_param` INT(1) UNSIGNED)
+BEGIN
+    INSERT INTO usuarios (curp, nombre, apellido, correo, contraseña, foto, telefono, id_rol)
+    VALUES (curp_param, nombre_param, apellido_param, correo_param, contraseña_param, foto_param, telefono_param, id_rol_param);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `contar_objetos_nuevos`(OUT `cant` INT)
+begin
+	select count(*) into cant from etiquetas WHERE nombre = "lost";
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `contar_objetos_usados`(OUT `cant` INT)
+begin
+	select count(*) into cant from etiquetas WHERE nombre = "found";
+end$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `contar_objetos_vendidos`(OUT `cant` INT)
+begin
+	select count(*) into cant from etiquetas WHERE nombre="gathered";
+end$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `contar_posts`(OUT `cant` INT)
+begin
+	select count(*) into cant from posts;
+end$$
+DELIMITER ;

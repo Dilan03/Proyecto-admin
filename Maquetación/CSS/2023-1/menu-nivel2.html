@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARRA DE MENÚ</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font-size: 20px;
+        }
+        nav {
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+            background-color: aqua;
+        }
+        li {
+            background-color: aquamarine;
+            display: inline-block;
+            margin: 0;
+            text-decoration: none;
+        }
+
+        .cosa {
+            padding: 15px;
+        }
+
+        nav ul a {
+            border: 1px solid black;
+            border-radius: 10px;
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px;
+            margin: 0;
+            background-color: greenyellow;
+        }
+        nav ul a:hover {
+            background-color: goldenrod;
+        }
+
+        nav .desplegable{
+            display: none;
+        }
+        nav>ul>.cosa:hover .desplegable{
+            position: absolute;
+            display: block;
+            background-color: red;
+            margin-top: 15px;
+            padding-left: 0;
+        }
+        .desplegable a {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            BARRA DE MENÚ
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="cosa">OPCION 100
+                <ul class="desplegable">
+                    <a href="#">OPCION 110</a>
+                    <a href="#">OPCION 120</a>
+                    <a href="#">OPCION 130</a>
+                    <a href="#">OPCION 140</a>
+                    <a href="#">OPCION 150</a>
+                </ul>
+            </li>
+            <li class="cosa">OPCION 200
+                <ul class="desplegable">
+                    <a href="#">OPCION 210</a>
+                    <a href="#">OPCION 220</a>
+                    <a href="#">OPCION 230</a>
+                    <a href="#">OPCION 240</a>
+                    <a href="#">OPCION 250</a>
+                </ul>
+            </li>
+            <li class="cosa">OPCION 300
+                <ul class="desplegable">
+                    <a href="#">OPCION 310</a>
+                    <a href="#">OPCION 320</a>
+                    <a href="#">OPCION 330</a>
+                    <a href="#">OPCION 340</a>
+                    <a href="#">OPCION 350</a>
+                </ul>
+            </li>
+            <li class="cosa">OPCION 400
+                <ul class="desplegable">
+                    <a href="#">OPCION 410</a>
+                    <a href="#">OPCION 420</a>
+                    <a href="#">OPCION 430</a>
+                    <a href="#">OPCION 440</a>
+                    <a href="#">OPCION 450</a>
+                </ul>
+            </li>
+            <li class="cosa">OPCION 500
+                <ul class="desplegable">
+                    <a href="#">OPCION 510</a>
+                    <a href="#">OPCION 520</a>
+                    <a href="#">OPCION 530</a>
+                    <a href="#">OPCION 540</a>
+                    <a href="#">OPCION 550</a>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

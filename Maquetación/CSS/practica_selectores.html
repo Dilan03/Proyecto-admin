@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectores</title>
+    <style>
+        /* Selectores sin pseudo elementos*/
+        body{
+          background-color: darkgray;
+        }
+        h1{
+        color: blue;
+        }
+        section{
+        background-color: lightgray;
+        padding: 10px;
+        margin-bottom: 20px;
+        }
+        p{
+        font-size: 18px;
+        }
+        footer p{
+        font-style: italic;
+        }
+        /*Selectores con pseudo elementos*/
+        h2::before{
+        content: "-";
+        margin-right: 10px;
+        }
+        h2::after{
+        content: "-";
+        margin-left: 10px;
+        }
+        section::before{
+        content: "Esto es una sección:";
+        font-weight: bold;
+        }
+        section:first-of-type{
+        background-color: lightblue;
+        }
+        footer p::first-letter{
+        text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>Página web con selectores</h1>
+  
+  <section>
+    <h2>Título de sección 1 entre guiones</h2>
+    <p>Este es el párrafo de la sección 1.</p>
+  </section>
+  
+  <section>
+    <h2>Título de sección 2 entre guiones</h2>
+    <p>Este es el párrafo de la sección 2.</p>
+  </section>
+  
+  <footer>
+    <p>primer letra en mayúscula</p>
+  </footer>
+</body>
+</html>

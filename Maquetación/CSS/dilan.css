@@ -1,0 +1,430 @@
+a {
+    text-decoration: none;
+}
+
+/* Clases de tarjeta */
+.tarjeta {
+    position: relative;
+    width: 88%;
+    height: 495px;
+    background: var(--morado-1);
+    border-radius: 8px;
+    padding: 26px;
+    padding-top: 36px;
+}
+
+.tarjeta__image {
+    margin: 0 auto;
+    width: 95%;
+    height: 65%;
+    background: var(--morado-2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tarjeta__image img{
+    width: 100%;
+}
+
+.tarjeta__detalles {
+    margin: 0 auto;
+    width: 95%;
+    height: 30%;
+}
+
+.tarjeta__detalles span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta__nombre {
+    color: var(--blanco-1);
+    font-family: RobotoMono-Light;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.tarjeta__fecha {
+    color: var(--blanco-1);
+    margin-top: 15px;
+    font-family: RobotoMono-Light;
+    font-size: 24px;
+}
+
+.boton {
+    background: var(--morado-3);
+    border-radius: var(--border-8);
+}
+
+.boton__tarjeta {
+    height: 44px;
+    color: var(--blanco-1);
+    padding: 0 20px;
+}
+
+.boton__tarjeta a {
+    font-family: RobotoMono-Light;
+    font-size: 18px;
+}
+
+.etiquetaCAT {
+    background: var(--morado-2);
+    color: var(--blanco-1);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-family: RobotoMono-Regular;
+    font-size: 16px;
+}
+
+.etiquetaEST {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 48px;
+    width: 120px;
+    border-radius: var(--border-8);
+    margin-left: 8px;
+}
+
+.etiquetaEST span {
+    color: var(--blanco-1);
+    font-family: RobotoMono-Regular;
+    font-size: 16px;
+}
+
+.etiquetaEST--lost {
+    background: var(--lost-blue);
+}
+
+.etiquetaEST--ancient {
+    background: var(--ancient-purple);
+}
+
+.etiquetaEST--found {
+    background: var(--found-pink);
+    /* display: none; */
+}
+
+.etiquetaEST--gathered {
+    background: var(--gathered-aqua);
+}
+
+.tarjeta__etiquetas {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    top: 20px;
+    width: 83%;
+    left: 9%;
+    height: 48px;
+}
+
+/* Fin clases tarjeta */
+
+/* Clases para el menu, la barra de busqueda y footer*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--morado-bg);
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 1450px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    grid-template-rows: 180px 1fr;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    height: 100%;
+}
+
+.options__logeduser {
+    display: flex;
+    align-items: center;
+    /* display: none; */
+}
+
+.boton__tarjeta--login {
+    background: var(--morado-bg);
+    border: 2px solid var(--morado-8);
+}
+
+.boton__tarjeta--login:hover {
+    border: 2px solid var(--morado-3);
+    font-family: RobotoMono-Regular;
+}
+
+.logo {
+    margin-right: 61px;
+}
+
+.search__container {
+    width: 70%;
+}
+
+.search__container>form>input{
+    color: var(--blanco-1);
+    font-size: 25px;
+    width: 60%;
+    height: 71px;
+    padding:12px;
+    padding: 0 32px;
+    background: var(--morado-2);
+    border-width: 0px;
+    border-radius: var(--border-8);
+}
+
+.search__container form{
+    position: relative;
+}
+
+.search__form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.button__search {
+    position: absolute;
+    left: 615px;
+}
+
+.header__options {
+    position: absolute;
+    right: 0;
+}
+
+.header__options i {
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.options__tuerca:hover {
+    filter: invert(71%) sepia(62%) saturate(2371%) hue-rotate(203deg) brightness(101%) contrast(99%);
+}
+
+.options__upload:hover {
+    filter: invert(71%) sepia(62%) saturate(2371%) hue-rotate(203deg) brightness(101%) contrast(99%);
+}
+
+.menu {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 305px;
+    margin-top: 84px;
+}
+
+.main {
+    overflow: hidden;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.main__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 19px 19px;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 192px;
+    background: var(--morado-1);
+}
+
+.icon__home img{
+    content: url(../assets/icons/home.svg);
+}
+
+.icon__home:hover img{
+    content: url(../assets/icons/home-active.svg);
+}
+
+.icon__lost img{
+    content: url(../assets/icons/lost.svg);
+}
+
+.icon__lost:hover img{
+    content: url(../assets/icons/lost-active.svg);
+}
+
+.icon__found img{
+    content: url(../assets/icons/found.svg);
+}
+
+.icon__found:hover img{
+    content: url(../assets/icons/found-active.svg);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.footer__contenido {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.footer__contenido span a {
+    margin-left: 50px;
+    line-height: 50px;
+}
+
+/*Hero*/
+
+.hero {
+    position: relative;
+    min-height: 86vh;
+}
+
+.hero__titulo {
+    margin-top: 0;
+    width: 75%;
+    font-family: RobotoMono-Bold;
+    font-size: 90px;
+}
+
+.hero__imagen {
+    position: absolute;
+    right: 0;
+    top: 25%;
+}
+
+.boton__hero {
+    height: 85px;
+    color: black;
+    padding: 0 22px;
+    font-family: RobotoMono-Medium;
+    font-size: 20px;
+}
+
+/*Reciente Gallery*/
+
+.RecienteGallery__titulo {
+    font-family: RobotoMono-Regular;
+    font-size: 36px;
+    color: white;
+}
+
+.tarjetaSlider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 135%;
+    height: 558px;
+    margin-bottom: 60px;
+    /* margin-left: -190px; */ /*Se va usar para despalzar tarjetas*/
+}
+
+.slider-wh {
+    width: 370px;
+    margin-right: 19px;
+}
+
+/*lost objects*/
+
+.gallery__top {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.gallery__titulo {
+    font-family: RobotoMono-Regular;
+    font-size: 32px;
+}
+
+.boton__filtro img{
+    position: relative;
+    margin-right: 10px;
+    top: 3px;
+}
+
+.boton__filtro span {
+    font-family: RobotoMono-Regular;
+    font-size: 25px; 
+}
+
+.modal {
+    position:absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.492);
+
+}
+
+.hideElement {
+    display: none;
+}
+
+.profilepic {
+    display: flex;
+    align-items: center;
+    width: 69px;
+    height: 69px;
+    border: 1px solid var(--morado-8);
+    background: var(--morado-5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profilepic img {
+    height: 100%;
+}
+
+/* html, body {margin: 0; height: 100%; overflow: hidden} */ /*codigo para bloquear la pantalla*/
+
+/*Media queries*/
+@media screen and (max-width: 1400px) {
+    .container {
+        width: 1200px;
+    }
+
+    .tarjeta {
+        padding: 20px;
+        padding-top: 34px;
+    }
+
+    .boton__tarjeta {
+        padding: 0 10px;
+    }
+
+    .button__search {
+        left: 514px;
+
+    }
+
+    .menu {
+        margin-top: 50px;
+    }
+
+    .hero__titulo {
+        font-size: 75px;
+    }
+    
+    .hero__imagen {
+        width: 480px;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODELO DE CAJAS</title>
+
+    <style>
+        div{
+            box-sizing: content-box;
+            width: 300px;
+            padding: 20px;
+            border: 10px, red solid;
+            margin: 20px
+        }
+        mark{
+            /*
+            width: 300px;
+            padding: 20px;
+            border: 10px, solid red;
+            margin: 20px
+            */
+            padding-top: 10;
+            padding-right: 20;
+            padding-bottom: 30;
+            padding-left: 15;
+
+            /* PRIMERO: TOP Y BOTTOM
+               SEGUNDO: RIGHT Y LEFT
+            */
+            padding: 20px 20px;
+
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+
+            border-top-width: solid;
+            border-right-width: solid;
+            border-bottom-width: solid;
+            border-left-width: solid;
+
+            border-top-color: red;
+            border-right-color: green;
+            border-bottom-color: silver;
+            border-left-color: blue;
+
+            border-top: solid 2px red;
+            border-right: solid 4px green;
+            border-bottom: solid 3px silver;
+            border-left: solid 8px blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        MODELO <mark>MODELO</mark> DE CAJAS
+    </div>
+</body>
+</html>

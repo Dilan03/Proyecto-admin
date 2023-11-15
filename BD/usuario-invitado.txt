@@ -1,0 +1,27 @@
+GRANT USAGE ON *.* TO `invitado`@`localhost` IDENTIFIED BY PASSWORD '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257';
+
+GRANT SELECT ON `found\_it`.* TO `invitado`@`localhost`;
+
+
+
+GRANT USAGE ON *.* TO `found_it`@`localhost` IDENTIFIED BY PASSWORD '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257';
+
+GRANT EXECUTE ON `found\_it`.* TO `found_it`@`localhost`;
+
+GRANT INSERT ON `found_it`.`bitacora` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `found_it`.`usuarios` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `found_it`.`posts` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `found_it`.`ubicacion` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, DELETE ON `found_it`.`roles` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, DELETE ON `found_it`.`comentarios` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `found_it`.`detallesposts` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `found_it`.`clasificacion` TO `found_it`@`localhost`;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `found_it`.`etiquetas` TO `found_it`@`localhost`;

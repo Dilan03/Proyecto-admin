@@ -1,0 +1,417 @@
+.registration-form {
+  position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    padding: 30px;
+    background-color: #414268;
+    border-radius: 8px;
+}
+
+.register-titulo {
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="tel"],
+.registration-form input[type="password"],
+.registration-form select[type="major"] {
+    display: block;
+    width: 80%;
+    padding: 5px;
+    margin: 0 auto;
+    border: none;
+    background-color: #242541;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: solid #5b5881;
+    color: white;
+    margin-top: 20px;
+}
+
+.password-group {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/icons/ojo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+ }
+
+.password-toggle.hide-password {
+    background-image: url('../assets/icons/ojo.svg');
+}
+
+button.submit-button {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #917cfa;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.submit-button:hover {
+    background-color: #8B008B;
+    color: #fff;
+}
+
+/*Fin css registro*/
+.login-form {
+  position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 500px;
+    height: 370px;
+    padding: 30px;
+    background-color: #414268;
+    border-radius: 8px;
+  }
+  
+  .login-titulo {
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    margin-top: 10px;
+    font-family: RobotoMono-Bold;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"],
+  .login-form input[type="text"],
+  .login-form select[type="major"] {
+    display: block;
+    width: 80%;
+    padding: 5px;
+    margin: 0 auto;
+    border: none;
+    background-color: #242541;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: solid #5b5881;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  .password-group {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    left: 415px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/icons/ojo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+  
+  .password-toggle.hide-password {
+    background-image: url('https://img.icons8.com/ios/50/000000/invisible--v1.png');
+  }
+  
+  button.login-button {
+    display: block;
+    margin: 0 auto;
+    width: 65%;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #917cfa;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 70px;
+  }
+  
+  button.login-button:hover {
+    background-color: #8B008B;
+    color: #fff;
+  }
+  
+  #h1 {
+    float: right;
+    margin-right: 60px;
+  }
+  
+  #h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .field-container {
+    margin-top: 60px;
+  }
+ 
+  /*Fin css entrar*/
+.rectangulo1{
+    position: relative;
+    width: calc(70% - 80px);
+    height: calc(777px - 80px);
+    background: #181B35;
+    border-radius: 8px;
+    margin-right: 20px;
+    padding: 40px;
+}
+.rectangulo2{
+  width: 100%;
+  height: 100%;
+  background: #242641;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.titulo{
+    display: block;
+    top: 30px;
+    color: white;
+    left: 50px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 41px;
+    margin-top: 0;
+}
+.rectangulo3{
+  display: block;
+  width: calc(30% - 100px);
+  min-height: calc(677px - 80px);
+  padding:40px;
+  background: #181B35;
+  border-radius: 8px;
+}
+.diaencontrado{
+    display: block;
+
+    width:100%;
+    height: 55px;
+    left: 50px;
+    top: 115px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.DetalleObjeto {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.DetalleObjeto p {
+  margin: 0;
+}
+
+.desc{
+    display: block;
+    top: 177px;
+    left: 50px;
+    color: white;
+    font-size: 16px;
+    line-height: 21px;
+}
+.desc2{
+    display: block;
+
+    top: 204px;
+    left: 50px;
+    text-align: justify;
+    width: 100%;
+    color: white;
+    font-size: 12.5px;
+    line-height: 17px;
+}
+.cat{
+    display: block;
+
+    top: 310px;
+    left: 50px;
+    color: white;
+}
+.cate{
+    display: block;
+    margin: 25px 0;
+    top: 345px;
+    color: white;
+    width: 105px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    left: 50px;
+    background: #242641;
+    border-radius: 8px;
+    font-size: 12px;
+}
+.ub{
+  display: block;
+
+  top: 420px;
+  width: 150px;
+  left: 50px;
+  color: white;
+}
+.edificio{
+    display: block;
+    margin: 25px 0;
+    color: white;
+    width: 105px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    left: 50px;
+    background: #242641;
+    border-radius: 8px;
+    font-size: 12px;
+}
+.encontro{
+    display: block;
+
+    top: 525px;
+    left: 50px;
+    color: white;
+    font-size: 16px;
+    line-height: 21px;
+}
+.alumno{
+    display: block;
+
+    top: 540px;
+    left: 50px;
+    font-size: 19px;
+    line-height: 25px;
+    color: white;
+}
+.carrera{
+    display: block;
+
+    top: 570px;
+    left: 50px;
+    font-size: 16px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.74);
+}
+.tel{
+    display: block;
+
+    top: 595px;
+    left: 50px;
+    font-size: 16px;
+    line-height: 21px;
+    color: white;
+    color: rgba(255, 255, 255, 0.74);
+}
+.pre{
+  text-align: center;
+  color: #8F7DFA;
+  margin-bottom: 8px !important;
+}
+.rectangulo4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 77px;
+  color: white;
+  background: #8F7DFA;
+  border-radius: 8px;
+  font-size: 19px;
+  line-height: 77px;
+}
+
+.rectangulo4:hover {
+  background: var(--morado-8);
+}
+
+.imag{
+  width: 100%;
+}
+.circle{
+  display: flex;
+  align-items: center;
+  left: 0%;
+  top: 40%;
+  height: 100px;
+  width: 100px;
+  background-color: #484C72;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.flechasImagen {
+  position: absolute;
+  top:44%;
+  width: 91%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fright{
+  margin-left: 32px;
+}
+
+.fleft{
+
+  left: 5%;
+  top: 18%;
+  bottom: 9.11%;
+}
+.fright{
+
+  left: 30%;
+  top: 18%;
+  bottom: 9.11%;
+}
+.rectangulo6{
+  display: block;
+  position: absolute;
+  width: 126px;
+  height: 48px;
+  left: 81.7%;
+  top: 22px;
+  background: rgba(0, 117, 255, 0.32);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 48px;
+}
+
+.seccionBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.seccionBtn span {
+  margin: 0;
+}
+
