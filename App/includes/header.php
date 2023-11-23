@@ -13,6 +13,7 @@
         <header class="header">
             <i class="logo"><a href="index.php"><img src="assets/icons/logo.svg" alt="logo"></a></i>
             <?php
+            static $commit = 1;
             if (isset($_POST['buscador'])) {
                 $buscar = $_POST['buscador'];
 

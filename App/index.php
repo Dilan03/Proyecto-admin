@@ -14,7 +14,7 @@ if (!empty($_SESSION["id"])) {
 <?php include_once 'includes/nav.php'?>
 
 <section class="main hero">
-    <h1 class="hero__titulo">¿Vendes algo? fsdf¡Publicalo!</h1>
+    <h1 class="hero__titulo">¿Vendes algo? ¡Publicalo!</h1>
     <button class="boton boton__hero" id="login_btn">Empezar a vender</button>
     <img class="hero__imagen" src="assets/images/apreton-de-manos.png" alt="">
 </section>

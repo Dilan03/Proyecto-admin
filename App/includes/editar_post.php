@@ -1,4 +1,4 @@
-<form class="crearpub__form movLR" method="POST" action=<?php echo "functions/editar_posts.php?id_user=".$row['no_control']."&id_post=".$row_detalle['id']?> enctype="multipart/form-data">
+<form class="crearpub__form movLR" method="POST" action=<?php echo "functions/editar_posts.php?id_user=".$row['curp']."&id_post=".$row_detalle['id']?> enctype="multipart/form-data">
     <h2 class="titulo-ventana"><b>Editar publicación</b></h2>
 
     <input type="file" id="myFile2" name="imagen">
