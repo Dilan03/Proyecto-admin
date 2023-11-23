@@ -22,11 +22,9 @@ if(isset($_POST["comentar"])) {
    $fecha_publicacion = date('Y-m-d H:i:s');
    $comentario = $_POST["comentario"];
 
-   if($GLOBALS["commit"]==true) {
+   $queryComentario = "CALL InsertarComentario('$id_autor', '$comentario', '$fecha_publicacion', $id_post);";
+   mysqli_query($conn, $queryComentario);
 
-      $queryComentario = "CALL InsertarComentario('$id_autor', '$comentario', '$fecha_publicacion', $id_post);";
-      mysqli_query($conn, $queryComentario);
-   }
 
    
 }
