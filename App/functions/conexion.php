@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$serverName = "127.0.0.1:33065";
-$userName = "invitado";
-$password = "123";
+$serverName = "localhost:3306";
+$userName = "root";
+$password = "root";
 $dbName = "found_it";
 
 //crear conexion 

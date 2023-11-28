@@ -12,9 +12,9 @@
 
 <?php echo $row_detalle['id']; 
     if(isset($_POST['recuperado'])){
-        $serverName = "127.0.0.1:33065";
-        $userName = "found_it";
-        $password = "123";
+        $serverName = "localhost:3306";
+        $userName = "root";
+        $password = "root";
         $dbName = "found_it";
             
         //crear conexion 

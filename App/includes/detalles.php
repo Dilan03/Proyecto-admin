@@ -105,10 +105,10 @@
                 <?php
                     function conseguirnumeroBD() {
                         // Configurar la conexión a la base de datos
-                        $servername = "127.0.0.1:33065";
-                        $username = "found_it";
-                        $password = "123";
-                        $dbname = "found_it";
+                        $serverName = "localhost:3306";
+                        $userName = "root";
+                        $password = "root";
+                        $dbName = "found_it";
                         $telefono = $row_detalle['telefono']; // Obtener el número de teléfono desde la variable $row_detalle
                     }
                 ?>

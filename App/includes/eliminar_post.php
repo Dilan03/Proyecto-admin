@@ -1,8 +1,8 @@
 <?php
 // Aquí debes incluir el código de conexión a la base de datos
-$serverName = "127.0.0.1:33065";
-$userName = "found_it";
-$password = "123";
+$serverName = "localhost:3306";
+$userName = "root";
+$password = "root";
 $dbName = "found_it";
 
 if(isset($_GET['id'])) {

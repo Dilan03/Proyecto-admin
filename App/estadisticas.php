@@ -4,13 +4,13 @@ require 'functions/registrar.php';
 require 'functions/login.php';
 require 'functions/mostrar_posts.php';
 require 'functions/filtrar.php';
-$serverName = "127.0.0.1:33065";
-    $userName = "found_it";
-    $password = "123";
-    $dbName = "found_it";
+$serverName = "localhost:3306";
+$userName = "root";
+$password = "root";
+$dbName = "found_it";
     
     //crear conexion 
-    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
+$conn = mysqli_connect($serverName, $userName, $password, $dbName);
 
 if (!empty($_SESSION["id"])) {
     $id = $_SESSION["id"];

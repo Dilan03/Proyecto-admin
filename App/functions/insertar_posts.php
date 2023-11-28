@@ -1,16 +1,16 @@
 <?php
-$serverName = "127.0.0.1:33065";
-$userName = "found_it";
-$password = "123";
+$serverName = "localhost:3306";
+$userName = "root";
+$password = "root";
 $dbName = "found_it";
 
 $conn = mysqli_connect($serverName, $userName, $password, $dbName);
 
 if(isset($_POST["publicar"])) {
 
-   $serverName = "127.0.0.1:33065";
-   $userName = "found_it";
-   $password = "123";
+   $serverName = "localhost:3306";
+   $userName = "root";
+   $password = "root";
    $dbName = "found_it";
 
    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
