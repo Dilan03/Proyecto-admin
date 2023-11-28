@@ -17,11 +17,11 @@
 <div class="modal hideElement" id="editar_post_form">
     <?php include 'includes/editar_post.php'?>
 </div>
-
+<!--
 <div class="modal hideElement" id="eliminar_post_form">
-    <?php include 'includes/eliminar_post.php'?>
+    <?php //include 'includes/eliminar_post.php'?>
 </div>
-
+-->
 <div class="modal hideElement" id="cerrar_sesion_form">
     <?php include 'includes/cerrar_sesion.php'?>
 </div>

@@ -5,70 +5,58 @@ $userName = "found_it";
 $password = "123";
 $dbName = "found_it";
 
-$blqueo = false;
-
 if(isset($_GET['id'])) {
     $id_post = $_GET['id'];
 }
 
-//$conn = mysqli_connect($serverName, $userName, $password, $dbName);
+$conn = mysqli_connect($serverName, $userName, $password, $dbName);
 
-$querydisponible = "SELECT disponible from posts WHERE id = $id_post AND disponible = 1";
-$resultadoDisponible = mysqli_query($conn, $querydisponible);
+//$querydisponible = "SELECT disponible from posts WHERE id = $id_post AND disponible = 1";
+//$resultadoDisponible = mysqli_query($conn, $querydisponible);
 
-if(mysqli_num_rows($resultadoDisponible) > 0) {
-    $visible = "no disponible";
-}else {
-    $visible = "disponible";
-    $blqueo = true;
-    if($blqueo) {
-        $querypostnodisponible = "UPDATE posts SET disponible = 1 where id = $id_post";
-        mysqli_query($conn, $querypostnodisponible);
-        $blqueo = false;
+$querypostnodisponible = "UPDATE posts SET disponible = 1 where id = $id_post";
+mysqli_query($conn, $querypostnodisponible);
+
+if (isset($_POST["confirmar"])) {
+
+    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
+
+    // Obtener el ID de la publicación a eliminar
+    if(isset($_GET['id'])) {
+        $id_post = $_GET['id'];
     }
 
-    if (isset($_POST["confirmar"])) {
-    
-        $conn = mysqli_connect($serverName, $userName, $password, $dbName);
-    
-        // Obtener el ID de la publicación a eliminar
-        if(isset($_GET['id'])) {
-            $id_post = $_GET['id'];
-        }
-    
-        // Eliminar la publicación de la tabla "posts"
-        $queryEliminarPost = "DELETE FROM posts WHERE id_Detallesposts = $id_post";
-        mysqli_query($conn, $queryEliminarPost);
-    
-        // Eliminar los detalles de la publicación de la tabla "detallesposts"
-        $queryEliminarDetalles = "DELETE FROM detallesposts WHERE id = $id_post";
-        mysqli_query($conn, $queryEliminarDetalles);
-    
-        // Eliminar las etiquetas de la publicación de la tabla "etiquetas"
-        $queryEliminarEtiquetas = "DELETE FROM etiquetas WHERE id_post = $id_post";
-        mysqli_query($conn, $queryEliminarEtiquetas);
-        
-        //$querypostnodisponible = "UPDATE posts SET disponible = null where id = $id_post";
-        //mysqli_query($conn, $querypostnodisponible);
+    // Eliminar la publicación de la tabla "posts"
+    $queryEliminarPost = "DELETE FROM posts WHERE id_Detallesposts = $id_post";
+    mysqli_query($conn, $queryEliminarPost);
 
-        // Redirigir al usuario a la página correspondiente según el estatus de la publicación
-        if ($estatus == 'lost') {
-            header("Location: ../lostobjects.php");
-        } elseif ($estatus == 'found') {
-            header("Location: ../foundobjects.php");
-        }
-    } 
+    // Eliminar los detalles de la publicación de la tabla "detallesposts"
+    $queryEliminarDetalles = "DELETE FROM detallesposts WHERE id = $id_post";
+    mysqli_query($conn, $queryEliminarDetalles);
+
+    // Eliminar las etiquetas de la publicación de la tabla "etiquetas"
+    $queryEliminarEtiquetas = "DELETE FROM etiquetas WHERE id_post = $id_post";
+    mysqli_query($conn, $queryEliminarEtiquetas);
     
-}
+    //$querypostnodisponible = "UPDATE posts SET disponible = null where id = $id_post";
+    //mysqli_query($conn, $querypostnodisponible);
+    header("Location: ../index.php");
+    // Redirigir al usuario a la página correspondiente según el estatus de la publicación
+    if ($estatus == 'lost') {
+        header("Location: ../lostobjects.php");
+    } elseif ($estatus == 'found') {
+        header("Location: ../foundobjects.php");
+    }
+} 
 
 if (isset($_POST["cancelar"])) {
     if(isset($_GET['id'])) {
         $id_post = $_GET['id'];
     }
-    if(!$blqueo) {
-        $querypostnodisponible = "UPDATE posts SET disponible = null where id = $id_post";
-        mysqli_query($conn, $querypostnodisponible);
-    }
+
+    $querypostnodisponible = "UPDATE posts SET disponible = null where id = $id_post";
+    mysqli_query($conn, $querypostnodisponible);
+    header("Location: ../detailobject.php?id=".$id_post);
     // El usuario ha hecho clic en el botón "Cancelar"
     // Realiza aquí cualquier acción necesaria o redirige a otra página si es necesario
     //header("Location: ../index.php"); // Ejemplo: redirige al usuario a la página principal
@@ -84,7 +72,7 @@ if (isset($_POST["cancelar"])) {
     if(isset($_GET['id'])) {
         $id_post = $_GET['id'];
     }
-    echo $visible;
+    //echo $visible;
     ?>
     <div class="eliminar_botones">
        <button type="submit" class="login-button" name="confirmar">Confirmar</button>

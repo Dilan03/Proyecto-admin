@@ -1,0 +1,3 @@
+<?php
+$permitir = false;
+test();

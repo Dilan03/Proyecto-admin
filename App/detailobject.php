@@ -7,8 +7,9 @@
         $result = mysqli_query($conn, "SELECT * FROM usuarios WHERE curp = '$id'");
         $row = mysqli_fetch_assoc($result);
     } 
-
+    
     require 'functions/detalle.php';
+    $post_id =  $row_detalle['id'];
 ?>
 
 <?php include_once 'includes/header.php'?>
@@ -17,7 +18,9 @@
         <section class="main">
             <h1 class="gallery__titulo">Detalle Del Objeto</h1>
             
-            <?php include 'includes/detalles.php'?>
+            <?php include 'includes/detalles.php';
+            
+            ?>
 
             <div class="SeccionComentarios">
                 <?php if(!empty($_SESSION["id"])) { ?>

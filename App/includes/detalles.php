@@ -2,7 +2,16 @@
     <div class="rectangulo1">
         <div class="rectangulo2">
             <?php
-                echo '<img width = 100% src=data:image;base64,'.$row_detalle['imagen'].' alt="profilepic"/>'
+                echo '<img width = 100% src=data:image;base64,'.$row_detalle['imagen'].' alt="profilepic"/>';
+                
+                $querydisponible = "SELECT disponible from posts WHERE id = $post_id AND disponible = 1";
+                $resultadoDisponible = mysqli_query($conn, $querydisponible);
+                
+                if(mysqli_num_rows($resultadoDisponible) > 0) {
+                    $permitir = false;
+                }else {
+                    $permitir = true;
+                }
             ?>
         </div>
             <?php
@@ -25,10 +34,12 @@
     </div>
     <div class="rectangulo3">
         <section>
-            <?php if(!empty($_SESSION["id"])) {if((!empty($_SESSION["id"]) && ($row_detalle["id_autor"] == $_SESSION["id"]))  || $row["id_rol"] == 1) { ?>
+            <?php 
+            if(!empty($_SESSION["id"])) {if((!empty($_SESSION["id"]) && ($row_detalle["id_autor"] == $_SESSION["id"]) && ($permitir))  || ($row["id_rol"] == 1 && ($permitir))) { ?>
                 <i id="options_desplegable_llave_btn"><img class="detalles_opt" src="assets/icons/llave.svg"></i>
                 <div class="options__desplegable-llave hideElement" id="options_desplegable_llave">
-                    <a href="#" id="eliminar_post_btn">Eliminar</a>
+                    <a href="includes/eliminar_post.php?id=<?php echo $row_detalle['id'];?>" id="eliminar_post_btn"> Eliminar
+                    </a>
                     <button id="editar_post_btn">Editar</button>
                     <a href="#" id="marcar_recuperado_btn">Vendido</a>
                 </div>
